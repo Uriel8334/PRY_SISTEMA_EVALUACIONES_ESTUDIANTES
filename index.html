@@ -10,12 +10,92 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="bg-dark text-white">
+    <header class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-6">
+                    <h1
+                        class="fs-1 text-center pb-3 border border-3 border-white border-start-0 border-end-0 border-top-0">
+                        SISTEMA DE EVALUACION
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <main>
+        <div class="container pb-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-6">
+                    <form action="" class="p-3 p-md-4 rounded-3 bg-dark bg-opacity-50 border border-secondary">
 
+                        <!-- ESTUDIANTES APROBADOS -->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="estudiante_aprobado" id="estudiante_aprobado"
+                                placeholder="" disabled />
+                            <label for="estudiante_aprobado">Total de Estudiantes Aprobados</label>
+                        </div>
+                        <!-- ESTUDIANTES SUPLETORIOS  -->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="estudiante_supletorio"
+                                id="estudiante_supletorio" placeholder="" disabled />
+                            <label for="estudiante_supletorio">Total de Estudiantes a Supletorio</label>
+                        </div>
+                        <!-- ESTUDIANTES REPROBADOS -->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="estudiante_reprobado"
+                                id="estudiante_reprobado" placeholder="" disabled />
+                            <label for="estudiante_reprobado">Total de Estudiantes Reprobados</label>
+                        </div>
+                        <!-- PROMEDIO DEL CURSO -->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="estudiante_promedio" id="estudiante_promedio"
+                                placeholder="" disabled />
+                            <label for="estudiante_promedio">Promedio del curso</label>
+                        </div>
+                        <!-- ESTADO DEL CURSO -->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="estado_curso" id="estado_curso" placeholder=""
+                                disabled />
+                            <label for="estado_curso">Estado del curso</label>
+                        </div>
+                        <!-- BOTON MOSTRAR ESTUDIANTES EVALUADOS -->
+                        <div class="row row-cols-1 row-cols-sm-2 g-3">
+                            <div class="d-grid">
+                                <button type="button" name="mostrar_estudiantes_evaluados"
+                                    id="mostrar_estudiantes_evaluados" class="btn btn-success">
+                                    Mostrar Estudiantes Evaluados
+                                </button>
+                            </div>
 
+                            <div class="d-grid">
+                                <button type="reset" class="btn btn-danger">
+                                    Resetear Campos
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <footer class="pb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-6 text-center">
+                    <hr class="border-secondary">
+                    <h6 class="mb-0">
+                        &copy; Todos los derechos reservados - 2025 <br>
+                        Desarrollado por Uriel Andrade
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
