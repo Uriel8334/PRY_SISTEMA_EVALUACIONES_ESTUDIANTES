@@ -8,6 +8,8 @@
         SISTEMA DE EVALUACION
     </title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="icon" type=".gif" href="./public/img/icons8-notas-64 (1).png" />
+
 </head>
 
 <body class="bg-dark text-white">
@@ -28,7 +30,7 @@
         <div class="container pb-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-6">
-                    <form action="" class="p-3 p-md-4 rounded-3 bg-dark bg-opacity-50 border border-secondary">
+                    <form action="" class="p-3 p-md-4 rounded-3 bg-dark bg-opacity-10 border border-secondary">
 
                         <!-- ESTUDIANTES APROBADOS -->
                         <div class="form-floating mb-3">
@@ -64,13 +66,13 @@
                         <div class="row row-cols-1 row-cols-sm-2 g-3">
                             <div class="d-grid">
                                 <button type="button" name="mostrar_estudiantes_evaluados"
-                                    id="mostrar_estudiantes_evaluados" class="btn btn-success">
-                                    Mostrar Estudiantes Evaluados
+                                    id="mostrar_estudiantes_evaluados" class="btn btn-primary">
+                                    Evaluar Estudiantes
                                 </button>
                             </div>
 
                             <div class="d-grid">
-                                <button type="reset" class="btn btn-danger">
+                                <button type="reset" id="limpiar_campos" class="btn btn-danger">
                                     Limpiar Campos
                                 </button>
                             </div>

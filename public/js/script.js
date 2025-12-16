@@ -1,5 +1,6 @@
 // Arreglo de notas de estudiantes
 let notas = [8, 4, 10, 6, 3, 9, 5, 7, 2];
+var cambioEstadoCurso = document.getElementById("estado_curso");
 
 // Función para procesar las evaluaciones de los estudiantes
 function procesarEvaluaciones() {
@@ -7,15 +8,15 @@ function procesarEvaluaciones() {
     let contadorAprobados = 0;
     let contadorSupletorio = 0;
     let contadorReprobados = 0;
-    
+
     // Variable para la suma total de notas
     let sumaNotas = 0;
-    
+
     // Recorrer el arreglo de notas
     notas.forEach(nota => {
         // Sumar la nota al total
         sumaNotas += nota;
-        
+
         // Clasificar las notas según los rangos
         if (nota >= 7 && nota <= 10) {
             // Aprobado: de 7 a 10
@@ -28,18 +29,20 @@ function procesarEvaluaciones() {
             contadorReprobados++;
         }
     });
-    
+
     // Calcular el promedio general
     const promedioGeneral = sumaNotas / notas.length;
-    
-    // Determinar el estado del curso
+
+    // Determinar el estado del curso y aplicar color de fondo
     let estadoCurso;
     if (promedioGeneral >= 7) {
         estadoCurso = "Aprobado";
+        cambioEstadoCurso.classList.add("bg-success", "text-white");
     } else {
         estadoCurso = "En Riesgo";
+        cambioEstadoCurso.classList.add("bg-warning", "text-dark");
     }
-    
+
     // Mostrar los resultados en los inputs
     document.getElementById("estudiante_aprobado").value = contadorAprobados;
     document.getElementById("estudiante_supletorio").value = contadorSupletorio;
@@ -48,11 +51,24 @@ function procesarEvaluaciones() {
     document.getElementById("estado_curso").value = estadoCurso;
 }
 
+// Funcion para limpiar campos
+function limpiarCampos() {
+    document.getElementById("estudiante_aprobado").value = "";
+    document.getElementById("estudiante_supletorio").value = "";
+    document.getElementById("estudiante_reprobado").value = "";
+    document.getElementById("estudiante_promedio").value = "";
+    document.getElementById("estado_curso").value = "";
+    cambioEstadoCurso.classList.remove("bg-success", "bg-warning", "text-white", "text-dark");
+}
+
 // Agregar evento al botón para mostrar estudiantes evaluados
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const botonMostrar = document.getElementById("mostrar_estudiantes_evaluados");
-    
-    botonMostrar.addEventListener("click", function() {
+    const botonLimpiar = document.getElementById("limpiar_campos");
+    botonMostrar.addEventListener("click", function () {
         procesarEvaluaciones();
+    });
+    botonLimpiar.addEventListener("click", function () {
+        limpiarCampos();
     });
 });
